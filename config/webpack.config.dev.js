@@ -148,7 +148,7 @@ module.exports = {
         include: paths.appSrc,
       },
       {
-        oneof: [
+        oneOf: [
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),

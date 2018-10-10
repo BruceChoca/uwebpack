@@ -6,7 +6,7 @@ module.exports = class WatchMissingNodeModulesPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.emit.tag('WatchMissingNodeModulesPlugin', compilation => {
+    compiler.hooks.emit.tap('WatchMissingNodeModulesPlugin', compilation => {
       let missingDeps = Array.from(compilation.missingDependencies);
       let nodeModulesPath = this.nodeModulesPath;
 
