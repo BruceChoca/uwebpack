@@ -74,4 +74,4 @@ function getClientEnvironment(publicUrl) {
   return { raw, stringified };
 }
 
-export default getClientEnvironment;
+module.exports = getClientEnvironment;

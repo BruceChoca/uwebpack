@@ -1,6 +1,6 @@
 'use strict';
 
-import spawn from 'cross-spawn';
+var spawn = require('cross-spawn');
 const args = process.argv.slice(2);
 
 const scriptIndex = args.findIndex(

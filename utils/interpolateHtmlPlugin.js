@@ -1,18 +1,18 @@
 'use strict';
 
-import escapeStringRegexp from 'escape-string-regexp';
+const escapeStringRegexp = require('escape-string-regexp');
 
 /**
  * 新建插件替换自定义配置字段
  * PUBLIC_URL REACT_APP_XXX等
  * .env
  */
-export default class InterpolateHtmlPlugin { 
-  constructor(replacements) { 
+module.exports = class InterpolateHtmlPlugin {
+  constructor(replacements) {
     this.replacements = replacements;
   }
 
-  apply(complier) { 
+  apply(complier) {
     complier.hooks.compilation.tap('InterpolateHtmlPlugin', compilation => {
       compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tap(
         'InterpolateHtmlPlugin',

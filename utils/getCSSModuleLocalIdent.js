@@ -1,8 +1,8 @@
 'use strict';
 
-import loaderUtils from 'loader-utils';
+const loaderUtils = require('loader-utils');
 
-export default function (context, localIdentName, localName, options) {
+module.exports = function (context, localIdentName, localName, options) {
 
   // Use the filename or folder name, based on some uses the index.js / index.module.(css|scss|sass) project style
   const fileNameOrFolder = context.resourcePath.match(/index\.module\.(css|scss|sass)$/) ? '[folder]' : '[name]';

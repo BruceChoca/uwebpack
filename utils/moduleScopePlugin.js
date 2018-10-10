@@ -1,12 +1,12 @@
 'use strict'
 
-import chalk from 'chalk';
-import path from 'path';
+const chalk = require('chalk');
+const path = require('path');
 
 /**
  * webpack解析插件 验证解析文件路径：src or node_modules
  */
-export default class ModuleScopePlugin {
+module.exports = class ModuleScopePlugin {
   constructor(appSrc, allowedFiles = []) {
     this.appSrcs = Array.isArray(appSrc) ? appSrc : [appSrc];
     this.allowedFiles = new Set(allowedFiles);

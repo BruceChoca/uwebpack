@@ -1,16 +1,18 @@
 'use strict';
 
-// import autoprefixer from 'autoprefixer';
-import path from 'path';
-import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CaseSensitivePathsWebpackPlugin from 'case-sensitive-paths-webpack-plugin';
+// const autoprefixer = require('autoprefixer');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CaseSensitivePathsWebpackPlugin = require('case-sensitive-paths-webpack-plugin');
 
-import WatchMissingNodeModulesPlugin from '../utils/watchMissingNodeModulesPlugin'
-import ModuleScopePlugin from '../utils/moduleScopePlugin';
-import InterpolateHtmlPlugin from '../utils/interpolateHtmlPlugin';
-import getClientEnvironment from './env';
-import paths from './paths';
+const WatchMissingNodeModulesPlugin = require('../utils/watchMissingNodeModulesPlugin')
+const ModuleScopePlugin = require('../utils/moduleScopePlugin');
+const InterpolateHtmlPlugin = require('../utils/interpolateHtmlPlugin');
+const getCSSModuleLocalIdent = require('../utils/getCSSModuleLocalIdent');
+const getClientEnvironment = require('./env');
+const paths = require('./paths');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -43,7 +45,7 @@ const getStyleLoaders = (cssOptions, preProcessor) => {
 
 
 
-export default {
+module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   entry: [
@@ -104,9 +106,9 @@ export default {
       // It usually still works on npm 3 without this but it would be
       // unfortunate to rely on, as react-scripts could be symlinked,
       // and thus @babel/runtime might not be resolvable from the source.
-      '@babel/runtime': path.dirname(
-        require.resolve('@babel/runtime/package.json')
-      ),
+      // '@babel/runtime': path.dirname(
+      //   require.resolve('@babel/runtime/package.json')
+      // ),
     },
     plugins: [
       // 解析插件，用于对引入的文件路径等做校验：引入文件只能在src或者node_modules
@@ -216,7 +218,7 @@ export default {
                   babelrc: false,
                   compact: false,
                   presets: [
-                    require.resolve('babel-preset-react-app/dependencies'),
+                    // require.resolve('babel-preset-react-app/dependencies'),
                   ],
                   cacheDirectory: true,
                   highlightCode: true,

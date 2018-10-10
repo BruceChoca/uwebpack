@@ -1,8 +1,8 @@
 'use strict';
 
-import fs from 'fs';
-import path from 'path';
-import chalk from 'chalk';
+const fs = require('fs');
+const path = require('path');
+const chalk = require('chalk');
 
 function checkRequiredFiles(files) {
   let currentFilePath;
@@ -24,4 +24,4 @@ function checkRequiredFiles(files) {
   }
 }
 
-export default checkRequiredFiles;
+module.exports = checkRequiredFiles;

@@ -1,16 +1,16 @@
 'use strict';
 
-import address from 'address';
-import fs from 'fs';
-import path from 'path';
-import url from 'url';
-import chalk from 'chalk';
-import detect from 'detect-port-alt';   // 端口检测
-import isRoot from 'is-root';           // 检测是否root用户
-import inquirer from 'inquirer';        // 命令行交互工具
-import clearConsole from './clearConsole';
-import formatWebpackMessages from './formatWebpackMessages';
-import getProcessForPort from './getProcessForPort';
+const address = require('address');
+const fs = require('fs');
+const path = require('path');
+const url = require('url');
+const chalk = require('chalk');
+const detect = require('detect-port-alt');   // 端口检测
+const isRoot = require('is-root');           // 检测是否root用户
+const inquirer = require('inquirer');        // 命令行交互工具
+const clearConsole = require('./clearConsole');
+const formatWebpackMessages = require('./formatWebpackMessages');
+const getProcessForPort = require('./getProcessForPort');
 
 const isInteractive = process.stdout.isTTY;
 
@@ -371,7 +371,7 @@ function choosePort(host, defaultPort) {
   );
 }
 
-export default {
+module.exports = {
   choosePort,
   createCompiler,
   prepareProxy,

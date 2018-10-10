@@ -1,8 +1,8 @@
 'use strict';
 
-import chalk from 'chalk';
-import stripAnsi from 'strip-ansi';
-import table from 'text-table';
+const chalk = require('chalk');
+const stripAnsi = require('strip-ansi');
+const table = require('text-table');
 
 function isError(message) {
   if (message.fatal || message.severity === 2) {

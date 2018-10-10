@@ -1,9 +1,9 @@
 'use strict';
 
-import chalk from 'chalk';
-import { execSync } from 'child_process';
-import spawn from 'cross-spawn';
-import opn from 'opn';
+const chalk = require('chalk');
+const { execSync } = require('child_process');
+const spawn = require('cross-spawn');
+const opn = require('opn');
 
 const OSX_CHROME = 'google chrome';
 const Actions = Object.freeze({
@@ -100,4 +100,4 @@ function openBrowser(url) {
   }
 }
 
-export default openBrowser;
+module.exports = openBrowser;

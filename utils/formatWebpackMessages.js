@@ -4,7 +4,7 @@
 
 'use strict';
 
-import chalk from 'chalk';
+const chalk = require('chalk');
 
 const syntaxErrorLabel = 'Syntax error:';
 
@@ -166,5 +166,5 @@ function formatWebpackMessages(json) {
   return result;
 }
 
-export default formatWebpackMessages;
+module.exports = formatWebpackMessages;
 

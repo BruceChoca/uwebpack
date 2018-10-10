@@ -1,7 +1,7 @@
 'use strict';
 
-import launchEditor from './launchEditor';
-import launchEditorEndpoint from './launchEditorEndPoint';
+const launchEditor = require('./launchEditor');
+const launchEditorEndpoint = require('./launchEditorEndPoint');
 
 module.exports = function createLaunchEditorMiddleware() {
   return function launchEditorMiddleware(req, res, next) {

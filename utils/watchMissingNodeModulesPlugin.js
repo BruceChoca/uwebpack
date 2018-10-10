@@ -1,6 +1,6 @@
 'use strict';
 
-export default class WatchMissingNodeModulesPlugin {
+module.exports = class WatchMissingNodeModulesPlugin {
   constructor(nodeModulesPath) {
     this.nodeModulesPath = nodeModulesPath;
   }

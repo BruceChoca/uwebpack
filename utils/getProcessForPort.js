@@ -3,9 +3,9 @@
  */
 'use strict';
 
-import chalk from 'chalk';
-import { execSync, exec } from 'child_process';
-import path from 'path';
+const chalk = require('chalk');
+const { execSync, exec } = require('child_process');
+const path = require('path');
 
 var execOptions = {
   encoding: 'utf8',
@@ -87,6 +87,6 @@ function getProcessForPort(port) {
   }
 }
 
-export default getProcessForPort;
+module.exports = getProcessForPort;
 
 

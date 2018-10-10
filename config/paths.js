@@ -6,9 +6,9 @@
 
 'use strict';
 
-import path from 'path';
-import fs from 'fs';
-import url from 'url';
+const path = require('path');
+const fs = require('fs');
+const url = require('url');
 
 
 const appDirectory = fs.realpathSync(process.cwd());
@@ -45,7 +45,7 @@ function getServedPath(appPackageJson) {
 /**
  * 约束目录结构
  */
-export default {
+module.exports = {
   dotenv: resolveApp('.env'),
   appPath: resolveApp('.'),
   appBuild: resolveApp('build'),
