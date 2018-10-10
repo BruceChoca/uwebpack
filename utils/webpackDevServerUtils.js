@@ -70,13 +70,13 @@ function prepareUrls(protocol, host, port) {
     prettyHost = host;
   }
 
-  const loaclUrlForTerminal = prettyPrintUrl(prettyHost);
+  const localUrlForTerminal = prettyPrintUrl(prettyHost);
   const localUrlForBrowser = formatUrl(prettyHost);
 
   return {
     lanUrlForConfig,
     lanUrlForTerminal,
-    loaclUrlForTerminal,
+    localUrlForTerminal,
     localUrlForBrowser
   }
 }
