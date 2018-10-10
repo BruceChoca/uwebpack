@@ -1,6 +1,6 @@
 {
   "name": "uwebpack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "封装webpack功能",
   "repository": "BruceChoca/uwebpack",
   "scripts": {
@@ -12,7 +12,9 @@
     "scripts",
     "utils"
   ],
-  "bin": "./bin/uwebpack",
+  "bin": {
+    "uwebpack": "./bin/uwebpack.js"
+  },
   "dependencies": {
     "address": "^1.0.3",
     "autoprefixer": "^9.1.5",
