@@ -1,8 +1,8 @@
+#!/usr/bin/env node
+
 'use strict';
-console.log(1)
 var spawn = require('cross-spawn');
 const args = process.argv.slice(2);
-console.log(2)
 const scriptIndex = args.findIndex(
   x => x === 'build' || x === 'start' // || x === 'eject' || x === 'test' 暂时屏蔽
 )
