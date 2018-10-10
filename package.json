@@ -1,11 +1,8 @@
 {
   "name": "uwebpack",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "封装webpack功能",
   "repository": "BruceChoca/uwebpack",
-  "scripts": {
-    "start": "node bin/uwebpack.js start"
-  },
   "files": [
     "bin",
     "config",
